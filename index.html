@@ -3311,6 +3311,7 @@ Table 5: Disproportion ratio for each age group and definition of exposure: the
 <li><strong>The HDI</strong> separates countries well: Tijuana 0.806 against San Diego 0.964, Mexicali 0.851 against El Centro 0.954. Within Los Angeles County, though, 90% of people live where it is between 0.935 and 0.975, a band narrow enough for the model’s errors to set the ranking (its documentation warns of noise and compressed variance). The 0.1° cell holding the ports, Wilmington and San Pedro has the highest value in its area, probably because port infrastructure looks like development in satellite imagery. A 0.1° cell is also larger than the 5 km buffers.</li>
 <li><strong>Both</strong> lean on satellite imagery, which sees density, buildings and light rather than income. GRDI makes dark, leafy suburbs look deprived; the HDI makes the port-industrial area look developed. Either bias distorts a comparison centered on ports, so any global layer needs this kind of check near ports before we use it.</li>
 </ul>
+<p>We also looked at a third global layer, Meta’s Relative Wealth Index (Chi et al., 2022), which predicts survey-measured household wealth on 2.4 km tiles from satellite imagery, night lights, mobile networks and Facebook connectivity data. It covers only low- and middle-income countries, so it has no values in the pilot’s US counties and cannot be checked against the places above. In the copy we checked (Earth Engine), ports with at least one of its tiles within 10 km handled 19% of 2024 port-visit ship PM2.5 (11% of the 12,643 ports with emissions). China, missing from that copy, alone handled 30%. Even a release covering every low- and middle-income country could reach at most 58%, since the rest is in high-income countries. That is too little overlap with the world’s ports for a main measure, so we have set it aside.</p>
 <p>Next, for the pilot, we will test a US census-tract measure (American Community Survey income or poverty, the CDC Social Vulnerability Index or CalEnviroScreen 4.0) against the same places.</p>
 <div id="tbl-vulnerability-check" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
@@ -3532,6 +3533,11 @@ Table 7: The same layers on either side of the US-Mexico border: unweighted mea
 <td>Socioeconomic vulnerability (tested, not used)</td>
 <td>GRDI v1 (CIESIN 2022, <a href="https://doi.org/10.7927/3xxe-ap97">doi:10.7927/3xxe-ap97</a>), about 1 km; HDI of Sherman et al. 2026, <em>Nature Communications</em> (<a href="http://www.mosaiks.org/hdi">mosaiks.org/hdi</a>), raster V2.0, 0.1°; both averaged to 0.01°</td>
 <td>Vulnerability fifths within each county; both failed the sanity check within Los Angeles</td>
+</tr>
+<tr class="even">
+<td>Relative wealth (coverage only)</td>
+<td>Meta’s Relative Wealth Index (Chi et al. 2022, <em>PNAS</em>, <a href="https://doi.org/10.1073/pnas.2113658119">doi:10.1073/pnas.2113658119</a>), Earth Engine community catalog copy (<a href="https://gee-community-catalog.org/projects/rwi/"><code>projects/sat-io/open-datasets/facebook/relative_wealth_index</code></a>, updated 2021-04-18); ports and their 2024 port-visit emissions from emLab’s <a href="https://github.com/emlab-ucsb/ocean-ghg-health-impacts/tree/ac9cddd/data/gfw"><code>data/gfw/</code></a> at commit <code>ac9cddd</code>; World Bank income groups (<a href="https://api.worldbank.org/v2/country">API</a>)</td>
+<td>Share of ports and port PM2.5 with RWI tiles within 10 km; not used in the results</td>
 </tr>
 </tbody>
 </table>
