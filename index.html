@@ -2224,7 +2224,7 @@ vertical-align: -.125em;
   <li><a href="#distance-buffers-versus-the-plume" id="toc-distance-buffers-versus-the-plume" class="nav-link" data-scroll-target="#distance-buffers-versus-the-plume">Distance buffers versus the plume</a></li>
   <li><a href="#who-is-exposed-in-progress" id="toc-who-is-exposed-in-progress" class="nav-link" data-scroll-target="#who-is-exposed-in-progress">Who is exposed (in progress)</a>
   <ul class="collapse">
-  <li><a href="#deprivation-work-in-progress" id="toc-deprivation-work-in-progress" class="nav-link" data-scroll-target="#deprivation-work-in-progress">Deprivation: work in progress</a></li>
+  <li><a href="#vulnerability-work-in-progress" id="toc-vulnerability-work-in-progress" class="nav-link" data-scroll-target="#vulnerability-work-in-progress">Socioeconomic vulnerability: work in progress</a></li>
   </ul></li>
   <li><a href="#next-steps" id="toc-next-steps" class="nav-link" data-scroll-target="#next-steps">Next steps</a></li>
   <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data">Data</a></li>
@@ -3117,7 +3117,7 @@ Table 4: Share of the reference plume zone that each variant’s plume zone kee
 </section>
 <section id="who-is-exposed-in-progress" class="level2">
 <h2 class="anchored" data-anchor-id="who-is-exposed-in-progress">Who is exposed (in progress)</h2>
-<p>We are now asking whether vulnerable groups are over-represented among exposed people: young children (under 5), older adults (65 and over) and, once we have a measure that works near the ports, people in deprived areas (see <a href="#deprivation-work-in-progress">below</a>). For each group, we divide its share among exposed people by its share of the county’s population, so each exposed person is compared with their own county. A ratio of 1 means no disparity. We compare three definitions of who is exposed: living within 1 to 25 km of either port, the plume zone of the same size (previous section), and everyone, weighted by their modeled ship PM2.5.</p>
+<p>We are now asking whether vulnerable populations are over-represented among exposed people: young children (under 5), older adults (65 and over) and, once we have a measure that works near the ports, socioeconomically vulnerable populations (see <a href="#vulnerability-work-in-progress">below</a>). For each group, we divide its share among exposed people by its share of the county’s population, so each exposed person is compared with their own county. A ratio of 1 means no disparity. We compare three definitions of who is exposed: living within 1 to 25 km of either port, the plume zone of the same size (previous section), and everyone, weighted by their modeled ship PM2.5.</p>
 <div class="callout callout-style-simple callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -3297,24 +3297,24 @@ Table 5: Disproportion ratio for each age group and definition of exposure: the
 </figcaption>
 </figure>
 </div>
-<section id="deprivation-work-in-progress" class="level3">
-<h3 class="anchored" data-anchor-id="deprivation-work-in-progress">Deprivation: work in progress</h3>
-<p>We also want to know whether people in deprived areas are over-represented among exposed people. That needs a measure that ranks neighborhoods correctly within a county. We have tried two global, gridded datasets, and neither passes a simple check in Los Angeles, so neither is used in the results above.</p>
+<section id="vulnerability-work-in-progress" class="level3">
+<h3 class="anchored" data-anchor-id="vulnerability-work-in-progress">Socioeconomic vulnerability: work in progress</h3>
+<p>We also want to know whether socioeconomically vulnerable populations are over-represented among exposed people. That needs a measure that ranks neighborhoods correctly within a county. We have tried two global, gridded datasets, and neither passes a simple check in Los Angeles, so neither is used in the results above.</p>
 <ul>
 <li><strong>GRDI v1</strong> (CIESIN, 2022): a 0-100 index at about 1 km, built from six components: child dependency ratio, infant mortality, subnational Human Development Index, built-up area, night lights, and the trend in night lights.</li>
 <li><strong>HDI of Sherman et al. (2026)</strong>: the Human Development Index predicted with machine learning from daytime satellite imagery and night lights (MOSAIKS), released at 0.1° (about 10 km) and scaled so each state matches its Global Data Lab value.</li>
 </ul>
-<p>The check ranks people within their county by each layer, as the analysis would, and looks at where well-known places land (<a href="#tbl-deprivation-check" class="quarto-xref">Table 6</a>). Of the 5 affluent places, GRDI puts 3 in their county’s two most deprived fifths and the HDI puts 4 there. Of the 5 lower-income places, the HDI puts 3 in the two least deprived fifths (GRDI: 1), including Wilmington, next to the ports, in the least deprived fifth. Palos Verdes Estates scores 0.935 on the HDI against 0.980 for Wilmington.</p>
+<p>The check ranks people within their county by each layer, from most to least vulnerable, as the analysis would, and looks at where well-known places land (<a href="#tbl-vulnerability-check" class="quarto-xref">Table 6</a>). Of the 5 affluent places, GRDI puts 3 in their county’s two most deprived fifths and the HDI puts 4 in its two lowest fifths. Of the 5 lower-income places, the HDI puts 3 in its two highest fifths (GRDI puts 1 in its two least deprived), including Wilmington, next to the ports, in the HDI’s highest fifth. Palos Verdes Estates scores 0.935 on the HDI against 0.980 for Wilmington.</p>
 <p>Why they fail here:</p>
 <ul>
-<li><strong>GRDI</strong> separates places mainly by built-up area and night lights within a metro area, because its income and health inputs come at state or regional level. Dark, low-density hillside and coastal suburbs then look deprived. Its documentation warns that it “may not fully capture intra-urban differentials in deprivation”. It also shows little difference across the US-Mexico border at the two city pairs we looked at (<a href="#tbl-deprivation-border" class="quarto-xref">Table 7</a>).</li>
+<li><strong>GRDI</strong> separates places mainly by built-up area and night lights within a metro area, because its income and health inputs come at state or regional level. Dark, low-density hillside and coastal suburbs then look deprived. Its documentation warns that it “may not fully capture intra-urban differentials in deprivation”. It also shows little difference across the US-Mexico border at the two city pairs we looked at (<a href="#tbl-vulnerability-border" class="quarto-xref">Table 7</a>).</li>
 <li><strong>The HDI</strong> separates countries well: Tijuana 0.806 against San Diego 0.964, Mexicali 0.851 against El Centro 0.954. Within Los Angeles County, though, 90% of people live where it is between 0.935 and 0.975, a band narrow enough for the model’s errors to set the ranking (its documentation warns of noise and compressed variance). The 0.1° cell holding the ports, Wilmington and San Pedro has the highest value in its area, probably because port infrastructure looks like development in satellite imagery. A 0.1° cell is also larger than the 5 km buffers.</li>
 <li><strong>Both</strong> lean on satellite imagery, which sees density, buildings and light rather than income. GRDI makes dark, leafy suburbs look deprived; the HDI makes the port-industrial area look developed. Either bias distorts a comparison centered on ports, so any global layer needs this kind of check near ports before we use it.</li>
 </ul>
 <p>Next, for the pilot, we will test a US census-tract measure (American Community Survey income or poverty, the CDC Social Vulnerability Index or CalEnviroScreen 4.0) against the same places.</p>
-<div id="tbl-deprivation-check" class="quarto-float quarto-figure quarto-figure-center anchored">
+<div id="tbl-vulnerability-check" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
-<div aria-describedby="tbl-deprivation-check-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div aria-describedby="tbl-vulnerability-check-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="table">
 <colgroup>
 <col style="width: 14%">
@@ -3342,18 +3342,18 @@ Table 5: Disproportion ratio for each age group and definition of exposure: the
 <td>Los Angeles</td>
 <td>affluent</td>
 <td style="text-align: right;">24.1</td>
-<td style="text-align: left;">1st, most deprived (77%)</td>
+<td style="text-align: left;">1st, most vulnerable (77%)</td>
 <td style="text-align: right;">0.935</td>
-<td style="text-align: left;">1st, most deprived (100%)</td>
+<td style="text-align: left;">1st, most vulnerable (100%)</td>
 </tr>
 <tr class="even">
 <td>Malibu</td>
 <td>Los Angeles</td>
 <td>affluent</td>
 <td style="text-align: right;">29.4</td>
-<td style="text-align: left;">1st, most deprived (53%)</td>
+<td style="text-align: left;">1st, most vulnerable (53%)</td>
 <td style="text-align: right;">0.895</td>
-<td style="text-align: left;">1st, most deprived (100%)</td>
+<td style="text-align: left;">1st, most vulnerable (100%)</td>
 </tr>
 <tr class="odd">
 <td>Beverly Hills</td>
@@ -3371,7 +3371,7 @@ Table 5: Disproportion ratio for each age group and definition of exposure: the
 <td style="text-align: right;">10.1</td>
 <td style="text-align: left;">3rd (56%)</td>
 <td style="text-align: right;">0.948</td>
-<td style="text-align: left;">1st, most deprived (100%)</td>
+<td style="text-align: left;">1st, most vulnerable (100%)</td>
 </tr>
 <tr class="odd">
 <td>Newport Coast</td>
@@ -3387,9 +3387,9 @@ Table 5: Disproportion ratio for each age group and definition of exposure: the
 <td>Los Angeles</td>
 <td>lower-income</td>
 <td style="text-align: right;">11.9</td>
-<td style="text-align: left;">1st, most deprived (30%)</td>
+<td style="text-align: left;">1st, most vulnerable (30%)</td>
 <td style="text-align: right;">0.980</td>
-<td style="text-align: left;">5th, least deprived (100%)</td>
+<td style="text-align: left;">5th, least vulnerable (100%)</td>
 </tr>
 <tr class="odd">
 <td>Compton</td>
@@ -3407,7 +3407,7 @@ Table 5: Disproportion ratio for each age group and definition of exposure: the
 <td style="text-align: right;">11.7</td>
 <td style="text-align: left;">4th (34%)</td>
 <td style="text-align: right;">0.964</td>
-<td style="text-align: left;">5th, least deprived (72%)</td>
+<td style="text-align: left;">5th, least vulnerable (72%)</td>
 </tr>
 <tr class="odd">
 <td>Boyle Heights</td>
@@ -3423,21 +3423,21 @@ Table 5: Disproportion ratio for each age group and definition of exposure: the
 <td>Orange</td>
 <td>lower-income</td>
 <td style="text-align: right;">22.1</td>
-<td style="text-align: left;">1st, most deprived (48%)</td>
+<td style="text-align: left;">1st, most vulnerable (48%)</td>
 <td style="text-align: right;">0.974</td>
-<td style="text-align: left;">5th, least deprived (100%)</td>
+<td style="text-align: left;">5th, least vulnerable (100%)</td>
 </tr>
 </tbody>
 </table>
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-tbl" id="tbl-deprivation-check-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table 6: Two global deprivation layers around well-known places. GRDI runs from 0 to 100, higher = more deprived; the HDI from 0 to 1, higher = better off. Each value is the people-weighted mean over a box of about 3 km around the place. The fifth is the within-county deprivation fifth holding most of the box’s people (share in brackets), with people ranked within their county as in the analysis. “Widely known as” is the places’ general reputation, not data; a check against census income by tract will make it formal.
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-tbl" id="tbl-vulnerability-check-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table 6: Two global layers tested as measures of socioeconomic vulnerability, around well-known places. GRDI runs from 0 to 100, higher = more deprived (the index’s own scale); the HDI from 0 to 1, higher = better off. Each value is the people-weighted mean over a box of about 3 km around the place. The fifth is the within-county fifth, ranked from most to least vulnerable by that layer, holding most of the box’s people (share in brackets), with people ranked within their county as in the analysis. “Widely known as” is the places’ general reputation, not data; a check against census income by tract will make it formal.
 </figcaption>
 </figure>
 </div>
-<div id="tbl-deprivation-border" class="quarto-float quarto-figure quarto-figure-center anchored">
+<div id="tbl-vulnerability-border" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
-<div aria-describedby="tbl-deprivation-border-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div aria-describedby="tbl-vulnerability-border-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="table">
 <thead>
 <tr class="header">
@@ -3470,7 +3470,7 @@ Table 6: Two global deprivation layers around well-known places. GRDI runs from
 </tbody>
 </table>
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-tbl" id="tbl-deprivation-border-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-tbl" id="tbl-vulnerability-border-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Table 7: The same layers on either side of the US-Mexico border: unweighted mean of the raw rasters within 0.05° (about 5 km) of each city center.
 </figcaption>
 </figure>
@@ -3484,7 +3484,7 @@ Table 7: The same layers on either side of the US-Mexico border: unweighted mea
 <li>Rerun the spatial variants against a finer emissions grid, if one can be built.</li>
 <li>Score each variant near the port, for the most exposed people and by group, rather than with one regional average.</li>
 <li>Define exposure from the plume rather than from distance buffers, and choose how to size the plume zone: matched to buffers, as here, or by a concentration cutoff once a finer grid firms up the pattern near the ports.</li>
-<li>Find a deprivation measure that passes the check near the ports: a census-tract measure for the pilot, and for a wider analysis, the same check of any global layer near ports.</li>
+<li>Find a measure of socioeconomic vulnerability that passes the check near the ports: a census-tract measure for the pilot, and for a wider analysis, the same check of any global layer near ports.</li>
 </ul>
 </section>
 <section id="data" class="level2">
@@ -3529,9 +3529,9 @@ Table 7: The same layers on either side of the US-Mexico border: unweighted mea
 <td>County baselines for the group ratios</td>
 </tr>
 <tr class="odd">
-<td>Deprivation (tested, not used)</td>
+<td>Socioeconomic vulnerability (tested, not used)</td>
 <td>GRDI v1 (CIESIN 2022, <a href="https://doi.org/10.7927/3xxe-ap97">doi:10.7927/3xxe-ap97</a>), about 1 km; HDI of Sherman et al. 2026, <em>Nature Communications</em> (<a href="http://www.mosaiks.org/hdi">mosaiks.org/hdi</a>), raster V2.0, 0.1°; both averaged to 0.01°</td>
-<td>Deprivation fifths within each county; both failed the sanity check within Los Angeles</td>
+<td>Vulnerability fifths within each county; both failed the sanity check within Los Angeles</td>
 </tr>
 </tbody>
 </table>
